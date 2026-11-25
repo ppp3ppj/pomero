@@ -1,0 +1,19 @@
+This is a preliminary version of the larl compiler.
+
+Source layout:
+
+boot/                    The bootstrap compiler, written in OCaml
+boot/fe                  - Front end (lexer, parser, AST)
+boot/me                  - Middle end (resolve, type check)
+boot/be                  - Back end (code generation)
+boot/util                - Ubiquitous helpers (errors, positions, misc)
+boot/driver              - Compiler driver (command line, runs fe -> me -> be)
+
+lib/                     The standard library, written in larl
+
+rt/                      The runtime system
+
+test/                    Testsuite
+test/compile-fail        - Tests that should fail to compile
+test/run-fail            - Tests that should compile, run and fail
+test/run-pass            - Tests that should compile, run and succeed

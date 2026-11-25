@@ -1,0 +1,3 @@
+(library
+ (name larl_be)
+ (libraries larl_util larl_fe larl_me))

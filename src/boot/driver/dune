@@ -1,0 +1,4 @@
+(executable
+ (public_name larl)
+ (name main)
+ (libraries larl_util larl_fe larl_me larl_be))

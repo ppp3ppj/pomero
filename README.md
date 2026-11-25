@@ -4,12 +4,16 @@ A programming language with its compiler written in OCaml. The source layout is
 inspired by **rustboot**, the original OCaml bootstrap compiler for Rust
 ([rust-lang/rust@ef75860](https://github.com/rust-lang/rust/tree/ef75860a0a72f79f97216f8aaa5b388d98da6480)).
 
+See [doc/ROADMAP.md](doc/ROADMAP.md) for the learning plan and progress checklist.
+
 ## Directory layout
 
 ```
 .
 ├── dune-project          dune project + opam package metadata
 ├── larl.opam             generated from dune-project (do not edit by hand)
+├── doc/
+│   └── ROADMAP.md        learning plan and todo checklist
 └── src/
     ├── boot/             the compiler, written in OCaml
     │   ├── driver/       CLI entry point; wires the stages together

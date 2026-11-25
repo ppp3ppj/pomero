@@ -1,2 +1,2 @@
 (library
- (name larl_util))
+ (name pomelo_util))

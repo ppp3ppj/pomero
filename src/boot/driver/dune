@@ -1,4 +1,4 @@
 (executable
- (public_name larl)
+ (public_name pomelo)
  (name main)
- (libraries larl_util larl_fe larl_me larl_be))
+ (libraries pomelo_util pomelo_fe pomelo_me pomelo_be))

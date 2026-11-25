@@ -1,4 +1,4 @@
-This is a preliminary version of the larl compiler.
+This is a preliminary version of the Pomelo compiler.
 
 Source layout:
 
@@ -9,7 +9,7 @@ boot/be                  - Back end (code generation)
 boot/util                - Ubiquitous helpers (errors, positions, misc)
 boot/driver              - Compiler driver (command line, runs fe -> me -> be)
 
-lib/                     The standard library, written in larl
+lib/                     The standard library, written in Pomelo
 
 rt/                      The runtime system
 

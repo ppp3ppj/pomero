@@ -11,7 +11,7 @@ _opam/
 *.swp
 .DS_Store
 
-# files generated when testing larl
+# files generated when testing Pomelo
 out/
 *.o
 a.out

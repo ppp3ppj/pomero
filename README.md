@@ -1,4 +1,4 @@
-# larl
+# Pomelo
 
 A programming language with its compiler written in OCaml. The source layout is
 inspired by **rustboot**, the original OCaml bootstrap compiler for Rust
@@ -11,7 +11,7 @@ See [doc/ROADMAP.md](doc/ROADMAP.md) for the learning plan and progress checklis
 ```
 .
 ├── dune-project          dune project + opam package metadata
-├── larl.opam             generated from dune-project (do not edit by hand)
+├── pomelo.opam           generated from dune-project (do not edit by hand)
 ├── doc/
 │   └── ROADMAP.md        learning plan and todo checklist
 └── src/
@@ -21,9 +21,9 @@ See [doc/ROADMAP.md](doc/ROADMAP.md) for the learning plan and progress checklis
     │   ├── fe/           frontend: lexer, parser, AST
     │   ├── me/           middle end: name resolution, type checking
     │   └── be/           backend: code generation
-    ├── lib/              standard library, written in larl
+    ├── lib/              standard library, written in Pomelo
     ├── rt/               runtime support linked into compiled programs
-    └── test/             test programs written in larl
+    └── test/             test programs written in Pomelo
         ├── run-pass/     must compile and run successfully
         ├── run-fail/     must compile but fail at runtime
         └── compile-fail/ must be rejected by the compiler
@@ -31,12 +31,12 @@ See [doc/ROADMAP.md](doc/ROADMAP.md) for the learning plan and progress checklis
 
 | Directory | dune name | Purpose |
 |---|---|---|
-| `src/boot/driver` | `larl` (executable) | Parses command-line arguments and runs fe → me → be. |
-| `src/boot/util` | `larl_util` | Code every stage needs: source positions, diagnostics, small utilities. |
-| `src/boot/fe` | `larl_fe` | Turns source text into tokens (lexer) and then into an AST (parser). |
-| `src/boot/me` | `larl_me` | Checks the AST: resolves names, infers and checks types. |
-| `src/boot/be` | `larl_be` | Lowers the checked program to the target (assembly, C, bytecode, …). |
-| `src/lib` | — | The larl standard library (`*.larl`). Not built by dune. |
+| `src/boot/driver` | `pomelo` (executable) | Parses command-line arguments and runs fe → me → be. |
+| `src/boot/util` | `pomelo_util` | Code every stage needs: source positions, diagnostics, small utilities. |
+| `src/boot/fe` | `pomelo_fe` | Turns source text into tokens (lexer) and then into an AST (parser). |
+| `src/boot/me` | `pomelo_me` | Checks the AST: resolves names, infers and checks types. |
+| `src/boot/be` | `pomelo_be` | Lowers the checked program to the target (assembly, C, bytecode, …). |
+| `src/lib` | — | The Pomelo standard library (`*.pml`). Not built by dune. |
 | `src/rt` | — | Runtime code (e.g. C) for memory, I/O, startup. |
 | `src/test/*` | — | Language-level tests, grouped by expected outcome as in rustboot. |
 
@@ -53,6 +53,6 @@ util  <-  fe  <-  me  <-  be  <-  driver
 
 ```sh
 dune build          # build everything
-dune exec larl      # run the compiler
+dune exec pomelo    # run the compiler
 dune test           # run tests
 ```

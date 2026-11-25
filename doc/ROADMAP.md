@@ -1,11 +1,11 @@
-# larl roadmap
+# Pomelo roadmap
 
-Learning plan for building larl: an OCaml front end with a QBE back end.
+Learning plan for building Pomelo: an OCaml front end with a QBE back end.
 Tick a box (`- [x]`) when it's done. Finish each phase's **Done when** check
 before you move on, so the compiler always works end to end.
 
 ```
-hello.larl → [larl, OCaml] → hello.ssa → qbe → hello.s → cc → ./hello
+hello.pml → [pomelo, OCaml] → hello.ssa → qbe → hello.s → cc → ./hello
 ```
 
 ---
@@ -34,7 +34,7 @@ hello.larl → [larl, OCaml] → hello.ssa → qbe → hello.s → cc → ./hell
 - [ ] A `program` type (a list of statements)
 - [ ] Pretty-printer: `Ast.to_string`
 
-**Done when:** an AST built by hand in OCaml prints back as larl source.
+**Done when:** an AST built by hand in OCaml prints back as Pomelo source.
 
 ## Phase 2: Lexer (`src/boot/fe/lexer.mll`)
 
@@ -45,7 +45,7 @@ hello.larl → [larl, OCaml] → hello.ssa → qbe → hello.s → cc → ./hell
 - [ ] Track line numbers for error messages
 - [ ] Report unknown characters as errors
 
-**Done when:** `larl --tokens file.larl` prints the token list.
+**Done when:** `pomelo --tokens file.pml` prints the token list.
 
 ## Phase 3: Parser (`src/boot/fe/parser.mly`)
 
@@ -55,14 +55,14 @@ hello.larl → [larl, OCaml] → hello.ssa → qbe → hello.s → cc → ./hell
 - [ ] Operator precedence (`*` binds tighter than `+`)
 - [ ] Syntax errors include the line number
 
-**Done when:** `larl --ast file.larl` prints the AST.
+**Done when:** `pomelo --ast file.pml` prints the AST.
 
 ## Phase 4: Interpreter (optional, `src/boot/me/eval.ml`)
 
 - [ ] `eval` with an environment for variables
-- [ ] First tests in `src/test/run-pass/*.larl`
+- [ ] First tests in `src/test/run-pass/*.pml`
 
-**Done when:** `larl --run file.larl` prints the right output.
+**Done when:** `pomelo --run file.pml` prints the right output.
 
 ## Phase 5: QBE by hand
 
@@ -96,7 +96,7 @@ hello.larl → [larl, OCaml] → hello.ssa → qbe → hello.s → cc → ./hell
 - [ ] `-o <output>` flag
 - [ ] Clear error messages and non-zero exit codes
 
-**Done when:** `larl hello.larl -o hello && ./hello` works.
+**Done when:** `pomelo hello.pml -o hello && ./hello` works.
 
 ## Phase 8: Test runner
 
